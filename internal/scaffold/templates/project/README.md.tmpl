@@ -1,0 +1,26 @@
+# {{.ProjectName}}
+
+Starter project Go dengan struktur Ports and Adapters (Hexagonal Architecture).
+
+Module path: `{{.ModulePath}}`
+
+## Menjalankan
+
+```sh
+go run .
+```
+
+Server berjalan di `http://localhost:8080`.
+
+- `GET /healthz` — health check.
+- `HTTP_ADDR` — alamat listen, default `:8080`.
+
+## Struktur
+
+- `internals/core/` — aturan domain dan logika inti.
+- `internals/port/inbound/` — kontrak untuk use case yang dipanggil dari luar.
+- `internals/port/outbound/` — kontrak kebutuhan eksternal seperti repository.
+- `internals/adapter/inbound/` — adapter yang menerima request, misalnya HTTP.
+- `internals/adapter/outbound/` — adapter untuk database atau layanan eksternal.
+
+Direktori arsitektur dibuat sebagai kerangka awal. Tambahkan package dan implementasi sesuai kebutuhan aplikasi.

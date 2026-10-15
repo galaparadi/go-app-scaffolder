@@ -1,0 +1,8 @@
+*.db
+*.sqlite
+*.sqlite3
+__debug_*
+*.exe
+.env
+.vscode/*
+!.vscode/extensions.json
