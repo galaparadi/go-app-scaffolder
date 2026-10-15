@@ -30,7 +30,7 @@ Template ditanam di binary menggunakan `embed`, sehingga generator tidak membutu
 
 ```text
 myapp/
-├── internals/
+├── internal/
 │   ├── adapter/
 │   │   ├── inbound/
 │   │   └── outbound/
