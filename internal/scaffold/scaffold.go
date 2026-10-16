@@ -77,6 +77,12 @@ func Generate(cfg Config) error {
 			return nil
 		}
 
+		// .gitkeep files exist only to preserve empty directories in the template.
+		// Do not copy them into the generated project.
+		if !entry.IsDir() && entry.Name() == ".gitkeep" {
+			return nil
+		}
+
 		target := filepath.Join(out, filepath.FromSlash(rel))
 		if entry.IsDir() {
 			return os.MkdirAll(target, 0o755)
